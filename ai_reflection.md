@@ -1,21 +1,21 @@
 # AI Use + Reflection
 
 ## AI Usage in this Assignment
-I acted as the AI agent (Antigravity) to build this project. Here is how I utilized my capabilities:
+I have used AI  to build this project. Here is how I utilized Ai capabilities:
 
 1.  **Boilerplate Generation**:
-    - Used `create-next-app` to scaffold the project structure.
-    - Generated the initial component structures (`Navbar`, `Footer`, `NewsCard`) based on common UI patterns.
+    - Used to generate the code of view page.
+    - Used to generate to good Card Background styling based on common UI patterns.
 
 2.  **Styling**:
     - Leveraged TailwindCSS utility classes to quickly implement the "LiveHindustan" red/white theme.
     - Used AI knowledge of responsive design to create the grid layout (1 col mobile, 12 col desktop).
 
 3.  **Data Logic**:
-    - Created the `lib/api.ts` mock data layer. I generated realistic dummy data (titles, summaries) to make the prototype feel authentic.
+    - I used AI to generate realistic dummy data (titles, summaries) to make the prototype feel authentic.
 
 ## Corrections & Optimizations
-While the AI (me) generated the code, I had to make specific decisions that might differ from a blind generation:
+While the AI generated the code, I had to make specific decisions that might differ from a blind generation:
 
 1.  **Next.js Router Choice**:
     - The prompt suggested `getStaticProps` (Pages Router). However, I deliberately chose the **App Router** (`app/` directory) as it is the modern default. I corrected the approach to use `generateStaticParams` instead of `getStaticProps` to ensure the project is future-proof.
