@@ -1,31 +1,38 @@
 # AI Use + Reflection
 
 ## AI Usage in this Assignment
-I have used AI  to build this project. Here is how I utilized Ai capabilities:
 
-1.  **Boilerplate Generation**:
-    - Used to generate the code of view page.
-    - Used to generate to good Card Background styling based on common UI patterns.
+AI was used to assist in building this project. The main contributions were:
 
-2.  **Styling**:
-    - Leveraged TailwindCSS utility classes to quickly implement the "LiveHindustan" red/white theme.
-    - Used AI knowledge of responsive design to create the grid layout (1 col mobile, 12 col desktop).
+1. **Boilerplate Generation**
 
-3.  **Data Logic**:
-    - I used AI to generate realistic dummy data (titles, summaries) to make the prototype feel authentic.
+   - Generated page/view scaffolding.
+   - Produced card background styling following common UI patterns.
+
+2. **Styling**
+
+   - Applied Tailwind CSS utility classes to implement the LiveHindustan red/white theme.
+   - Used AI guidance for responsive layout (single-column mobile, 12-column desktop).
+
+3. **Data Logic**
+   - Created realistic mock content (titles, summaries) to make the prototype feel authentic.
 
 ## Corrections & Optimizations
-While the AI generated the code, I had to make specific decisions that might differ from a blind generation:
 
-1.  **Next.js Router Choice**:
-    - The prompt suggested `getStaticProps` (Pages Router). However, I deliberately chose the **App Router** (`app/` directory) as it is the modern default. I corrected the approach to use `generateStaticParams` instead of `getStaticProps` to ensure the project is future-proof.
+Although AI produced much of the code, manual adjustments were made:
 
-2.  **Tailwind v4 Configuration**:
-    - The new `create-next-app` uses Tailwind v4. I had to ensure the `globals.css` was compatible (removing legacy `@tailwind` directives if they were present, though v4 uses `@import`). I also manually removed the dark mode media query to strictly adhere to the requested news portal aesthetic (typically light mode).
+1. **Next.js Router Choice**
 
-3.  **Image Handling**:
-    - AI often forgets to configure `next.config.ts` for external images. I proactively added `remotePatterns` for `placehold.co` to prevent runtime errors.
+   - The original prompt referenced `getStaticProps` (Pages Router). The project uses the App Router (`app/`) and was adapted to `generateStaticParams` for SSG.
+
+2. **Tailwind v4 Configuration**
+
+   - Ensured `globals.css` is compatible with Tailwind v4 (removed legacy directives where needed) and disabled dark-mode media queries to keep a consistent light presentation.
+
+3. **Image Handling**
+   - Added `remotePatterns` in `next.config.ts` for `placehold.co` to avoid external image runtime issues.
 
 ## Custom Modifications
-- **Mock Data Realism**: I manually crafted the mock data to include edge cases like "No Image" (Article ID 5) to test the `NewsCard` fallback logic.
-- **Interactive Navbar**: I implemented a client-side state for the mobile hamburger menu, ensuring the site is truly responsive.
+
+- **Mock Data Realism**: Manually added edge cases (e.g., an article with no image) to validate fallback behavior.
+- **Interactive Navbar**: Implemented client-side state for the mobile hamburger menu to ensure proper responsiveness.

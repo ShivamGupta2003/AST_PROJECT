@@ -17,35 +17,50 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
 }
 
+
+
 export default async function CategoryPage({ params }: Props) {
-    const { category } = await params;
+  const { category } = await params;
 
-    // Validate category if needed, or just let API handle it
-    // Allowed categories: nation, world, cricket, tech, auto
-    const validCategories = ["nation", "world", "cricket", "tech", "auto"];
-    if (!validCategories.includes(category.toLowerCase())) {
-        notFound();
-    }
+  const validCategories = [
+    "nation",
+    "world",
+    "politics",
+    "tech",
+    "sports",
+    "business",
+    "science",
+    "environment",
+    "health",
+    "lifestyle",
+    "entertainment",
+    "education",
+    "career"
+  ];
 
-    const articles = await getArticles(category);
+  if (!validCategories.includes(category.toLowerCase())) {
+    notFound();
+  }
 
-    return (
-        <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold mb-8 border-b-2 border-red-600 pb-2 inline-block capitalize">
-                {category} News
-            </h1>
+  const articles = await getArticles(category);
 
-            {articles.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {articles.map((article) => (
-                        <NewsCard key={article.id} article={article} />
-                    ))}
-                </div>
-            ) : (
-                <div className="p-12 text-center bg-gray-50 rounded-lg">
-                    <p className="text-gray-500 text-lg">No articles found for this category.</p>
-                </div>
-            )}
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8 border-b-2 border-red-600 pb-2 inline-block capitalize">
+        {category} News
+      </h1>
+
+      {articles.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {articles.map((article) => (
+            <NewsCard key={article.id} article={article} />
+          ))}
         </div>
-    );
+      ) : (
+        <div className="p-12 text-center bg-gray-50 rounded-lg">
+          <p className="text-gray-500 text-lg">No articles found for this category.</p>
+        </div>
+      )}
+    </div>
+  );
 }
