@@ -2,9 +2,6 @@
 
 A Next.js prototype of a news portal inspired by LiveHindustan.
 
-## Repository
-
-Repository: {GITHUB_URL}
 
 ## Getting Started
 
@@ -35,4 +32,4 @@ Deploy on Vercel: https://vercel.com/new?utm_medium=default-template&filter=next
 
 ## Author
 
-Maintained by: {GITHUB_URL}
+Maintained by: Shivam Gupta
