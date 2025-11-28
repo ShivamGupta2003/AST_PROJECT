@@ -10,6 +10,7 @@ export interface Article {
   publishedAt: string;
   author: string;
   source?: string;
+   readTime?: number;
 }
 
 const MOCK_ARTICLES: Article[] = [
